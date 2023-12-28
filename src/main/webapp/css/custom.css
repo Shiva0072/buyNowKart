@@ -1,0 +1,22 @@
+@charset "UTF-8";
+:root {
+	--main-bg-color: #00e976;
+}
+body{
+	font-family: 'Exo 2', sans-serif;
+}
+.custom-bg{
+	background-color: var(--main-bg-color)!important;
+}
+.heading-font{
+	font-family: 'Dancing Script', cursive;
+}
+.admin .card-block{
+	background: #e2e2e2;
+	border : 1px solid red;
+}
+.admin .card:hover{
+	transition: all .2s ease-in-out;
+	transform: scale(1.02);
+	cursor: pointer;
+}
