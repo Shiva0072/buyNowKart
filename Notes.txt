@@ -1,0 +1,35 @@
+Protecting login-homeAdmin-homeNormal users route :-
+
+-> save the user in session when the user logs in. 
+-> in the homeNormal or homeAdmin check if user is present in the session object or not. if not then redirect to login page.
+-> when visiting the login page just check if user is there in the session object or not. if yes, then redirect the user back to the page 
+from where it came. [this is possible by saving 'redirectUrl' in sessionObj. it is saved while user visits homeNormal or homeAdmin].
+-> when user logs out then remove both the attributes (user, redirectUrl) of the session.
+
+=========================================================================================================================================================
+
+Learning about how to set a centralized style in css using :root{} and then access it within the js.
+-> approach -1
+
+       var body = document.body;
+       var computedStyles = getComputedStyle(body);
+       var backgroundColor = computedStyles.backgroundColor;
+       console.log('Computed Background Color:', backgroundColor);
+
+-> approach -2
+
+        // Get the computed styles of the body element
+        var body = document.body;
+        var computedStyles = getComputedStyle(body);
+
+        // Print all styles
+        for (var i = 0; i < computedStyles.length; i++) {
+            var propertyName = computedStyles[i];
+            var propertyValue = computedStyles.getPropertyValue(propertyName);
+
+            console.log(propertyName + ': ' + propertyValue);
+        }
+
+-> approach -3 [directly using the variable defined in :root{}]
+
+    var successColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-main-color').trim();
